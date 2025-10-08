@@ -17,15 +17,19 @@ body {
 
 /* 헤더 배너 */
 .profile-header {
-    /* ===== 변경: 이미지 비율(3:1) 유지 ===== */
-    aspect-ratio: 3 / 1;
-    background-color: #cfd9de; /* 이미지가 로딩 안될 경우 배경색 */
+    width: 100%;
+    height: 200px; /* 고정 높이 또는 원하는 높이로 설정 */
+    background-color: #f5f8fa; /* 이미지가 없을 때 또는 남는 공간의 배경색 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-header .banner-img {
     width: 100%;
-    height: 100%; /* 부모 요소 비율에 맞춤 */
-    object-fit: cover;
+    height: 100%;
+    /* ===== 변경: 이미지가 잘리지 않게 contain으로 수정 ===== */
+    object-fit: contain; 
     display: block;
 }
 
@@ -39,18 +43,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* ===== 변경: 프로필 크기 축소에 따른 높이 조절 ===== */
     height: 65px;
     margin-bottom: 16px;
 }
 
 .avatar-container {
-    /* ===== 변경: 프로필 크기 축소에 따른 위치 조절 ===== */
     margin-top: -65px;
 }
 
 .avatar-img {
-    /* ===== 변경: 프로필 크기 축소 ===== */
     width: 130px;
     height: 130px;
     border-radius: 50%;
@@ -58,36 +59,48 @@ body {
     background-color: #ffffff;
 }
 
+/* ===== 변경: 팔로우/팔로잉 버튼 스타일 ===== */
 .follow-btn {
     margin-top: 12px;
     padding: 8px 16px;
     font-size: 15px;
     font-weight: bold;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    
+    /* 기본 '팔로우' 상태 */
     color: #ffffff;
     background-color: #0f1419;
     border: 1px solid #0f1419;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+}
+
+/* '팔로잉' 상태일 때 적용될 스타일 */
+.follow-btn.following {
+    color: #0f1419;
+    background-color: #ffffff;
+    border: 1px solid #cfd9de;
+}
+
+.follow-btn.following:hover {
+    background-color: #f0f2f5; /* 마우스 올렸을 때 약간의 색 변화 */
 }
 
 .follow-btn:hover {
     background-color: #272c30;
 }
 
+
 /* 프로필 정보 */
 .profile-info {
     padding-top: 10px;
 }
-/* (이하 프로필 정보 스타일은 이전과 동일) */
 .user-name { font-size: 24px; font-weight: 800; margin: 0; }
 .user-handle { font-size: 15px; color: #536471; margin: 4px 0 12px; }
 .user-bio { font-size: 15px; line-height: 1.4; margin: 0 0 12px; }
 .user-meta { display: flex; flex-wrap: wrap; gap: 16px; color: #536471; font-size: 15px; margin-bottom: 12px; }
 .user-meta span { display: flex; align-items: center; }
 .user-meta .icon { width: 18px; height: 18px; fill: currentColor; margin-right: 6px; }
-.user-meta a { color: #1d9bf0; text-decoration: none; }
-.user-meta a:hover { text-decoration: underline; }
 .user-stats { display: flex; gap: 20px; font-size: 15px; }
 .user-stats a { color: #536471; text-decoration: none; }
 .user-stats a:hover { text-decoration: underline; }
@@ -108,9 +121,9 @@ body {
     height: 4px; background-color: #1d9bf0; border-radius: 9999px;
 }
 
-/* ===== 추가: 탭 콘텐츠 패널 스타일 ===== */
+/* 탭 콘텐츠 패널 스타일 */
 .content-feed {
-    padding: 0 16px;
+    padding: 0; /* PC/모바일 패딩 통일 */
 }
 .content-panel {
     display: none; /* 기본적으로 모든 패널 숨김 */
@@ -118,13 +131,42 @@ body {
 .content-panel.active {
     display: block; /* active 클래스가 있는 패널만 보여줌 */
 }
-.tweet-placeholder {
-    padding: 40px 20px;
-    text-align: center;
-    color: #536471;
-    font-size: 16px;
-    border-top: 1px solid #dddfe2;
+
+/* ===== 추가: 트윗 스타일 ===== */
+.tweet {
+    display: flex;
+    padding: 12px 16px;
+    border-bottom: 1px solid #dddfe2;
 }
+.tweet-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.tweet-content {
+    width: 100%;
+}
+.tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+.tweet-user-name {
+    font-weight: bold;
+    color: #0f1419;
+}
+.tweet-user-handle, .tweet-time {
+    color: #536471;
+    font-size: 15px;
+}
+.tweet-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
 
 /* PC 화면 반응형 디자인 */
 @media (min-width: 680px) {
@@ -133,10 +175,6 @@ body {
         border: 1px solid #dddfe2;
         border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        /* ===== 추가: 상단 둥근 모서리 적용을 위해 ===== */
         overflow: hidden;
-    }
-    .content-feed {
-        padding: 0; /* PC에서는 컨테이너 자체 패딩을 사용 */
     }
 }
