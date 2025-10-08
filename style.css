@@ -77,9 +77,6 @@ body {
     border: 1px solid #cfd9de;
 }
 
-/* ===== 삭제: Hover 효과 제거 ===== */
-
-
 /* 프로필 정보 */
 .profile-info {
     padding-top: 10px;
@@ -87,10 +84,8 @@ body {
 .user-name { font-size: 24px; font-weight: 800; margin: 0; }
 .user-handle { font-size: 15px; color: #536471; margin: 4px 0 12px; }
 .user-bio { font-size: 15px; line-height: 1.4; margin: 0 0 12px; }
-/* ===== 변경: 폰트 크기 줄임 ===== */
 .user-meta { display: flex; flex-wrap: wrap; gap: 16px; color: #536471; font-size: 14px; margin-bottom: 12px; }
 .user-meta span { display: flex; align-items: center; }
-/* ===== 변경: 아이콘 크기 키움 ===== */
 .user-meta .icon { width: 22px; height: 22px; fill: currentColor; margin-right: 6px; }
 .user-stats { display: flex; gap: 20px; font-size: 15px; }
 .user-stats a { color: #536471; text-decoration: none; }
@@ -177,18 +172,22 @@ body {
     fill: currentColor;
     transition: color 0.2s ease-in-out;
 }
+
+/* ===== 변경: 댓글 아이콘 색상 변경 ===== */
 .comment-disabled {
-    opacity: 0.6;
+    color: #b0bec5; /* 연한 회색으로 변경 */
     cursor: not-allowed;
 }
 
-/* 리트윗 아이콘 hover 및 active 스타일 */
-.action-item.retweet:hover { color: #00ba7c; }
-.action-item.retweet.active { color: #00ba7c; }
+/* 리트윗 아이콘 active 스타일 (Hover 효과 제거) */
+.action-item.retweet.active { 
+    color: #00ba7c; 
+}
 
-/* 마음 아이콘 hover 및 active 스타일 */
-.action-item.like:hover { color: #f91880; }
-.action-item.like.active { color: #f91880; }
+/* 마음 아이콘 active 스타일 (Hover 효과 제거) */
+.action-item.like.active { 
+    color: #f91880; 
+}
 .action-item.like.active .action-icon {
     fill: #f91880; /* 마음은 눌렀을 때 내부도 채워줌 */
 }
