@@ -20,18 +20,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // --- 팔로우 버튼 토글 기능 추가 ---
+    // --- 팔로우 버튼 토글 기능 ---
     const followBtn = document.querySelector('.follow-btn');
 
     followBtn.addEventListener('click', function() {
-        // 'following' 클래스를 토글 (있으면 제거, 없으면 추가)
         this.classList.toggle('following');
 
-        // 클래스 존재 여부에 따라 텍스트 변경
         if (this.classList.contains('following')) {
             this.textContent = '팔로잉';
         } else {
             this.textContent = '팔로우';
         }
+    });
+
+    // --- 추가: 트윗 액션(리트윗, 마음) 토글 기능 ---
+    const actionItems = document.querySelectorAll('.action-item.retweet, .action-item.like');
+
+    actionItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // 클릭된 아이템에 'active' 클래스를 추가하거나 제거합니다.
+            this.classList.toggle('active');
+        });
     });
 });
