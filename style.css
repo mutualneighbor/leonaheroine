@@ -131,7 +131,7 @@ body {
     margin-right: 12px;
 }
 .tweet-content {
-    width: 100%;
+    flex: 1; /* ★★★★★ 여기를 수정했습니다 ★★★★★ */
 }
 .tweet-header {
     display: flex;
@@ -152,7 +152,7 @@ body {
     font-size: 15px;
     line-height: 1.6;
     white-space: pre-wrap;
-    text-align: left; /* 왼쪽 정렬 적용 */
+    text-align: left;
 }
 
 /* 트윗 액션 아이콘 스타일 */
