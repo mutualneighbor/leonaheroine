@@ -43,7 +43,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     height: 65px;
-    margin-bottom: 4px; /* ===== 변경: 공백 줄임 ===== */
+    margin-bottom: 4px;
 }
 
 .avatar-container {
@@ -79,7 +79,7 @@ body {
 
 /* 프로필 정보 */
 .profile-info {
-    padding-top: 0; /* ===== 변경: 공백 줄임 ===== */
+    padding-top: 0;
 }
 .user-name { font-size: 24px; font-weight: 800; margin: 0; }
 .user-handle { font-size: 15px; color: #536471; margin: 4px 0 12px; }
@@ -152,7 +152,7 @@ body {
     font-size: 15px;
     line-height: 1.6;
     white-space: pre-wrap;
-    text-align: left; /* ===== 변경: 왼쪽 정렬 ===== */
+    text-align: left; /* 왼쪽 정렬 적용 */
 }
 
 /* 트윗 액션 아이콘 스타일 */
