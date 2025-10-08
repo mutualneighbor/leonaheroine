@@ -132,7 +132,7 @@ body {
 }
 .tweet-content {
     flex: 1;
-    min-width: 0; /* ★★★★★ 최종 수정 사항 ★★★★★ */
+    min-width: 0; 
 }
 .tweet-header {
     display: flex;
@@ -161,7 +161,7 @@ body {
     display: flex;
     justify-content: space-between;
     max-width: 425px;
-    margin-top: 12px;
+    margin-top: 8px; 
     color: #536471;
 }
 .action-item {
@@ -186,13 +186,12 @@ body {
     color: #00ba7c; 
 }
 
+/* <<< 수정된 부분 >>> */
 /* 마음 아이콘 active 스타일 (Hover 효과 제거) */
 .action-item.like.active { 
     color: #f91880; 
 }
-.action-item.like.active .action-icon {
-    fill: #f91880;
-}
+
 
 /* Media 갤러리 스타일 */
 #content-media {
