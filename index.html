@@ -43,21 +43,31 @@
 
             <nav class="profile-nav">
                 <ul>
-                    <li><a href="#" class="active">프로필</a></li>
-                    <li><a href="#">답글</a></li>
-                    <li><a href="#">미디어</a></li>
-                    <li><a href="#">마음에 들어요</a></li>
+                    <li><a href="#" class="nav-link active" data-target="#content-profile">프로필</a></li>
+                    <li><a href="#" class="nav-link" data-target="#content-replies">답글</a></li>
+                    <li><a href="#" class="nav-link" data-target="#content-media">미디어</a></li>
+                    <li><a href="#" class="nav-link" data-target="#content-likes">마음에 들어요</a></li>
                 </ul>
             </nav>
-
-            <div class="content-feed">
-                <div class="tweet-placeholder">
-                    <p>게시글이 여기에 표시됩니다.</p>
-                </div>
-            </div>
-
         </main>
+        
+        <div class="content-feed">
+            <div id="content-profile" class="content-panel active">
+                <div class="tweet-placeholder">프로필 게시글이 여기에 표시됩니다.</div>
+            </div>
+            <div id="content-replies" class="content-panel">
+                <div class="tweet-placeholder">답글이 여기에 표시됩니다.</div>
+            </div>
+            <div id="content-media" class="content-panel">
+                <div class="tweet-placeholder">미디어가 여기에 표시됩니다.</div>
+            </div>
+            <div id="content-likes" class="content-panel">
+                <div class="tweet-placeholder">마음에 들어한 콘텐츠가 여기에 표시됩니다.</div>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
