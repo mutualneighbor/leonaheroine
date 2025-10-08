@@ -1,0 +1,211 @@
+/* 기본 스타일 및 폰트 설정 */
+body {
+    background-color: #f0f2f5; /* 밝은 회색 배경 */
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: #0f1419; /* 기본 텍스트 색상 (더 진하게) */
+}
+
+/* 전체 프로필 컨테이너 - 모바일 기본 스타일 */
+.profile-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* 모바일에서는 위아래 여백 없음 */
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddfe2;
+}
+
+/* 헤더 배너 */
+.profile-header .banner-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-main {
+    padding: 0 16px;
+}
+
+/* 프로필 상단 (아바타, 버튼) */
+.profile-top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 75px;
+    margin-bottom: 16px;
+}
+
+.avatar-container {
+    margin-top: -75px;
+}
+
+.avatar-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    background-color: #ffffff;
+}
+
+/* ===== 변경된 '팔로우' 버튼 스타일 ===== */
+.follow-btn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff; /* 흰색 글자 */
+    background-color: #0f1419; /* 검은색 배경 */
+    border: 1px solid #0f1419;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.follow-btn:hover {
+    background-color: #272c30; /* 호버 시 약간 밝은 검은색 */
+}
+
+/* 프로필 정보 */
+.profile-info {
+    padding-top: 10px;
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.user-handle {
+    font-size: 15px;
+    color: #536471;
+    margin: 4px 0 12px;
+}
+
+.user-bio {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+}
+
+.user-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: #536471;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.user-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.user-meta .icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    margin-right: 6px;
+}
+
+.user-meta a {
+    color: #1d9bf0;
+    text-decoration: none;
+}
+
+.user-meta a:hover {
+    text-decoration: underline;
+}
+
+.user-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+}
+
+.user-stats a {
+    color: #536471;
+    text-decoration: none;
+}
+
+.user-stats a:hover {
+    text-decoration: underline;
+}
+
+.user-stats span {
+    font-weight: bold;
+    color: #0f1419;
+}
+
+/* 네비게이션 탭 */
+.profile-nav {
+    border-bottom: 1px solid #dddfe2;
+    margin-top: 16px;
+}
+
+.profile-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-nav li {
+    flex: 1;
+}
+
+.profile-nav a {
+    display: block;
+    padding: 16px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #536471;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.profile-nav a:hover {
+    background-color: #f0f2f5;
+}
+
+.profile-nav a.active {
+    color: #0f1419;
+}
+
+.profile-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #1d9bf0;
+    border-radius: 9999px;
+}
+
+.content-feed {
+    padding: 20px 0;
+}
+
+.tweet-placeholder {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}
+
+
+/* ===== 추가된 반응형 디자인 (PC 화면) ===== */
+/* 화면 너비가 680px 이상일 때 적용될 스타일 */
+@media (min-width: 680px) {
+    .profile-container {
+        margin: 20px auto; /* PC에서는 위아래 여백 추가 */
+        border: 1px solid #dddfe2;
+        border-radius: 16px; /* 더 둥글게 */
+        /* 더 강한 그림자로 카드 느낌 강화 */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
