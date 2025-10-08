@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             contentPanels.forEach(panel => panel.classList.remove('active'));
 
-            const targetPanelId = this.getAttribute('data-target');
+            const targetPanelId = this.getAttribute('data-target')
             const targetPanel = document.querySelector(targetPanelId);
             if (targetPanel) {
                 targetPanel.classList.add('active');
