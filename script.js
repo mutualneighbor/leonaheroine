@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- 추가: 트윗 액션(리트윗, 마음) 토글 기능 ---
+    // --- 변경: 트윗 액션(리트윗, 마음) 토글 기능 ---
     const actionItems = document.querySelectorAll('.action-item.retweet, .action-item.like');
 
     actionItems.forEach(item => {
         item.addEventListener('click', function() {
-            // 클릭된 아이템에 'active' 클래스를 추가하거나 제거합니다.
+            // 클릭된 아이템에 'active' 클래스를 추가하거나 제거(toggle)합니다.
             this.classList.toggle('active');
         });
     });
