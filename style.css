@@ -19,7 +19,6 @@ body {
 .profile-header {
     width: 100%;
     height: 200px; 
-    /* ===== 변경: 배경색을 흰색으로 수정 ===== */
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -67,7 +66,7 @@ body {
     font-weight: bold;
     border-radius: 9999px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    /* ===== 변경: transition 속성 제거 ===== */
     
     color: #ffffff;
     background-color: #0f1419;
@@ -79,8 +78,6 @@ body {
     background-color: #ffffff;
     border: 1px solid #cfd9de;
 }
-
-/* ===== 변경: 팔로잉 버튼 hover 효과 제거 ===== */
 
 .follow-btn:hover {
     background-color: #272c30;
@@ -96,7 +93,8 @@ body {
 .user-bio { font-size: 15px; line-height: 1.4; margin: 0 0 12px; }
 .user-meta { display: flex; flex-wrap: wrap; gap: 16px; color: #536471; font-size: 15px; margin-bottom: 12px; }
 .user-meta span { display: flex; align-items: center; }
-.user-meta .icon { width: 18px; height: 18px; fill: currentColor; margin-right: 6px; }
+/* ===== 변경: 아이콘 크기 키움 ===== */
+.user-meta .icon { width: 20px; height: 20px; fill: currentColor; margin-right: 6px; }
 .user-stats { display: flex; gap: 20px; font-size: 15px; }
 .user-stats a { color: #536471; text-decoration: none; }
 .user-stats a:hover { text-decoration: underline; }
@@ -153,7 +151,6 @@ body {
     font-weight: bold;
     color: #0f1419;
 }
-/* ===== 변경: 날짜 삭제로 인해 .tweet-time 스타일 불필요 ===== */
 .tweet-user-handle {
     color: #536471;
     font-size: 15px;
@@ -162,6 +159,41 @@ body {
     margin: 0;
     font-size: 15px;
     line-height: 1.5;
+}
+
+/* ===== 추가: 트윗 액션 아이콘 스타일 ===== */
+.tweet-actions {
+    display: flex;
+    justify-content: space-between;
+    max-width: 425px;
+    margin-top: 12px;
+    color: #536471;
+}
+.action-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.action-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: color 0.2s ease-in-out;
+}
+.comment-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 리트윗 아이콘 hover 및 active 스타일 */
+.action-item.retweet:hover { color: #00ba7c; }
+.action-item.retweet.active { color: #00ba7c; }
+
+/* 마음 아이콘 hover 및 active 스타일 */
+.action-item.like:hover { color: #f91880; }
+.action-item.like.active { color: #f91880; }
+.action-item.like.active .action-icon {
+    fill: #f91880; /* 마음은 눌렀을 때 내부도 채워줌 */
 }
 
 
