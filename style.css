@@ -18,8 +18,9 @@ body {
 /* 헤더 배너 */
 .profile-header {
     width: 100%;
-    height: 200px; /* 고정 높이 또는 원하는 높이로 설정 */
-    background-color: #f5f8fa; /* 이미지가 없을 때 또는 남는 공간의 배경색 */
+    height: 200px; 
+    /* ===== 변경: 배경색을 흰색으로 수정 ===== */
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,14 +29,13 @@ body {
 .profile-header .banner-img {
     width: 100%;
     height: 100%;
-    /* ===== 변경: 이미지가 잘리지 않게 contain으로 수정 ===== */
     object-fit: contain; 
     display: block;
 }
 
 .profile-main {
     padding: 0 16px;
-    position: relative; /* 자식 요소의 position 기준 */
+    position: relative;
 }
 
 /* 프로필 상단 (아바타, 버튼) */
@@ -59,7 +59,7 @@ body {
     background-color: #ffffff;
 }
 
-/* ===== 변경: 팔로우/팔로잉 버튼 스타일 ===== */
+/* 팔로우/팔로잉 버튼 스타일 */
 .follow-btn {
     margin-top: 12px;
     padding: 8px 16px;
@@ -69,22 +69,18 @@ body {
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
     
-    /* 기본 '팔로우' 상태 */
     color: #ffffff;
     background-color: #0f1419;
     border: 1px solid #0f1419;
 }
 
-/* '팔로잉' 상태일 때 적용될 스타일 */
 .follow-btn.following {
     color: #0f1419;
     background-color: #ffffff;
     border: 1px solid #cfd9de;
 }
 
-.follow-btn.following:hover {
-    background-color: #f0f2f5; /* 마우스 올렸을 때 약간의 색 변화 */
-}
+/* ===== 변경: 팔로잉 버튼 hover 효과 제거 ===== */
 
 .follow-btn:hover {
     background-color: #272c30;
@@ -123,16 +119,16 @@ body {
 
 /* 탭 콘텐츠 패널 스타일 */
 .content-feed {
-    padding: 0; /* PC/모바일 패딩 통일 */
+    padding: 0;
 }
 .content-panel {
-    display: none; /* 기본적으로 모든 패널 숨김 */
+    display: none;
 }
 .content-panel.active {
-    display: block; /* active 클래스가 있는 패널만 보여줌 */
+    display: block;
 }
 
-/* ===== 추가: 트윗 스타일 ===== */
+/* 트윗 스타일 */
 .tweet {
     display: flex;
     padding: 12px 16px;
@@ -157,7 +153,8 @@ body {
     font-weight: bold;
     color: #0f1419;
 }
-.tweet-user-handle, .tweet-time {
+/* ===== 변경: 날짜 삭제로 인해 .tweet-time 스타일 불필요 ===== */
+.tweet-user-handle {
     color: #536471;
     font-size: 15px;
 }
