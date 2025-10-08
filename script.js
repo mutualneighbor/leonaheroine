@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // --- 갤러리 이미지 동적 로딩 ---
     function loadGalleryImages() {
-        // 중요: 'images' 폴더에 있는 이미지 파일 이름을 이곳에 정확하게 입력하세요.
+        // 중요: 'gallery' 폴더에 있는 이미지 파일 이름을 이곳에 정확하게 입력하세요.
         const imageFiles = [
             '1.jpeg', 
             // 나중에 사진을 추가하려면 이 목록에 파일 이름을 더 입력하세요.
@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
             mediaItem.className = 'media-item';
 
             const img = document.createElement('img');
-            img.src = 'images/' + fileName; // 'images' 폴더 경로
+            // 'images/' -> 'gallery/' 로 수정
+            img.src = 'gallery/' + fileName; // 'gallery' 폴더 경로
             img.alt = fileName;
 
             mediaItem.appendChild(img);
